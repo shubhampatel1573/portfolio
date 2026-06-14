@@ -75,7 +75,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="pt-32 pb-12 relative z-10 px-6 md:px-12 bg-[#0a0a0a]">
+    <section id="projects" className="pt-12 md:pt-16 lg:pt-20 pb-12 relative z-10 px-6 md:px-12 bg-[#0a0a0a]">
       <div className="max-w-[100rem] mx-auto">
         
         {/* Section Header */}
@@ -116,7 +116,7 @@ const Projects = () => {
                     href={project.demo !== '#' ? project.demo : undefined}
                     target={project.demo !== '#' ? "_blank" : undefined}
                     rel="noopener noreferrer"
-                    className="w-full rounded-[2.5rem] border border-white/[0.06] bg-gradient-to-b from-white/[0.03] to-transparent overflow-hidden aspect-[4/4.5] relative mb-6 hover:border-white/[0.12] transition-colors duration-500 flex items-center justify-center p-12 md:p-16 cursor-none"
+                    className="w-full rounded-[2.5rem] border border-white/[0.06] bg-gradient-to-b from-white/[0.03] to-transparent overflow-hidden aspect-[4/4.5] relative mb-6 hover:border-white/[0.12] transition-colors duration-500 flex items-center justify-center p-8 md:p-16 cursor-none"
                   >
                     
                     {/* Floating Image */}

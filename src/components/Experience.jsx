@@ -43,7 +43,7 @@ const Experience = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: index * 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="group w-full rounded-[2rem] border border-white/[0.06] bg-gradient-to-b from-white/[0.03] to-transparent p-8 md:p-14 hover:border-white/[0.12] transition-colors duration-500 flex flex-col lg:flex-row gap-6 lg:gap-16 items-start lg:items-center"
+              className="group w-full rounded-[2rem] border border-white/[0.06] bg-gradient-to-b from-white/[0.03] to-transparent p-6 md:p-14 hover:border-white/[0.12] transition-colors duration-500 flex flex-col lg:flex-row gap-6 lg:gap-16 items-start lg:items-center"
             >
               
               {/* Left Column: Role & Company */}

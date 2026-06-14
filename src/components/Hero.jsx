@@ -3,8 +3,10 @@ import { useState } from 'react';
 
 const Hero = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleNavClick = (targetId) => {
+    setIsOpen(false);
     if (isTransitioning) return;
     setIsTransitioning(true);
     
@@ -70,6 +72,50 @@ const Hero = () => {
         )}
       </AnimatePresence>
 
+      {/* Fullscreen Menu Overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden fixed inset-0 w-full h-screen bg-[#0a0a0a]/98 backdrop-blur-xl z-[95] flex flex-col items-center justify-center gap-8"
+          >
+            <button onClick={() => handleNavClick('skills')} className="text-4xl md:text-6xl font-['Anton'] uppercase text-white hover:text-[#a855f7] transition-colors cursor-none bg-transparent border-none focus:outline-none tracking-wider">Skills</button>
+            <button onClick={() => handleNavClick('projects')} className="text-4xl md:text-6xl font-['Anton'] uppercase text-white hover:text-[#a855f7] transition-colors cursor-none bg-transparent border-none focus:outline-none tracking-wider">Projects</button>
+            <button onClick={() => handleNavClick('experience')} className="text-4xl md:text-6xl font-['Anton'] uppercase text-white hover:text-[#a855f7] transition-colors cursor-none bg-transparent border-none focus:outline-none tracking-wider">Experience</button>
+            <button onClick={() => handleNavClick('contact')} className="text-4xl md:text-6xl font-['Anton'] uppercase text-white hover:text-[#a855f7] transition-colors cursor-none bg-transparent border-none focus:outline-none tracking-wider">Contact</button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Top Horizontal Navigation */}
+      <motion.nav 
+        variants={fadeItem} 
+        initial="hidden" 
+        animate="visible" 
+        className="absolute top-6 md:top-8 left-0 w-full px-6 md:px-12 flex flex-row justify-between items-center z-[100]"
+      >
+        <div className="font-['Inter'] tracking-[0.3em] md:tracking-[0.4em] text-xs md:text-sm uppercase text-white font-bold">
+          SHUBHAM
+        </div>
+        <div className="hidden md:flex gap-10 text-sm font-['Inter'] font-medium cursor-none">
+          <button onClick={() => handleNavClick('skills')} className="hover:text-gray-300 transition-colors cursor-none bg-transparent border-none text-white focus:outline-none">Skills</button>
+          <button onClick={() => handleNavClick('projects')} className="hover:text-gray-300 transition-colors cursor-none bg-transparent border-none text-white focus:outline-none">Projects</button>
+          <button onClick={() => handleNavClick('experience')} className="hover:text-gray-300 transition-colors cursor-none bg-transparent border-none text-white focus:outline-none">Experience</button>
+          <button onClick={() => handleNavClick('contact')} className="hover:text-gray-300 transition-colors cursor-none bg-transparent border-none text-white focus:outline-none">Contact</button>
+        </div>
+        <button 
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden flex flex-col justify-center items-center gap-[6px] w-10 h-10 z-[100] cursor-none bg-transparent border-none focus:outline-none"
+        >
+          <motion.div animate={isOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }} className="w-6 h-[2px] bg-white origin-center transition-all" />
+          <motion.div animate={isOpen ? { opacity: 0 } : { opacity: 1 }} className="w-6 h-[2px] bg-white transition-all" />
+          <motion.div animate={isOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }} className="w-6 h-[2px] bg-white origin-center transition-all" />
+        </button>
+      </motion.nav>
+
       <section className="relative w-full h-screen overflow-hidden bg-[#e0e0e0]">
         {/* Expanding Black Background */}
         <motion.div 
@@ -81,25 +127,6 @@ const Hero = () => {
 
         {/* Content Overlay */}
         <div className="absolute inset-0 z-10 flex flex-col justify-center text-[#f4f4f4] px-8 md:px-12">
-          
-          {/* Top Horizontal Navigation */}
-          <motion.nav 
-            variants={fadeItem} 
-            initial="hidden" 
-            animate="visible" 
-            className="absolute top-6 md:top-8 left-0 w-full px-6 md:px-12 flex flex-row justify-between items-center z-50"
-          >
-            <div className="font-['Inter'] tracking-[0.3em] md:tracking-[0.4em] text-xs md:text-sm uppercase text-white font-bold">
-              SHUBHAM
-            </div>
-            <div className="flex gap-4 md:gap-10 text-[11px] md:text-sm font-['Inter'] font-medium cursor-none">
-              <button onClick={() => handleNavClick('skills')} className="hover:text-gray-300 transition-colors cursor-none bg-transparent border-none text-white focus:outline-none">Skills</button>
-              <button onClick={() => handleNavClick('projects')} className="hover:text-gray-300 transition-colors cursor-none bg-transparent border-none text-white focus:outline-none">Projects</button>
-              <button onClick={() => handleNavClick('experience')} className="hover:text-gray-300 transition-colors cursor-none bg-transparent border-none text-white focus:outline-none hidden sm:block">Experience</button>
-              <button onClick={() => handleNavClick('contact')} className="hover:text-gray-300 transition-colors cursor-none bg-transparent border-none text-white focus:outline-none">Contact</button>
-            </div>
-          </motion.nav>
-
           {/* Main Typography */}
           <motion.div 
             variants={textContainer}
@@ -112,7 +139,7 @@ const Hero = () => {
               <div className="overflow-hidden">
                 <motion.h1 
                   variants={textItem}
-                  className="text-[clamp(2.2rem,7.5vw,9rem)] leading-[0.85] md:leading-[0.9] font-['Anton'] uppercase m-0 tracking-wide text-white"
+                  className="text-[clamp(1.8rem,7.5vw,9rem)] leading-[0.85] md:leading-[0.9] font-['Anton'] uppercase m-0 tracking-wide text-white"
                 >
                   HI ! I'M SHUBHAM
                 </motion.h1>
@@ -136,7 +163,7 @@ const Hero = () => {
             <div className="w-full flex flex-col-reverse lg:flex-row justify-between items-start">
               <motion.div 
                 variants={fadeItem}
-                className="hidden lg:block w-64 xl:w-72 text-xs xl:text-sm text-gray-400 font-sans leading-relaxed tracking-wide text-left mt-4 shrink-0 mr-8"
+                className="w-full lg:w-64 xl:w-72 text-xs xl:text-sm text-gray-400 font-sans leading-relaxed tracking-wide text-left mt-2 lg:mt-4 shrink-0 lg:mr-8"
               >
                 I've worked with some of the most ambitious technologies such as React, Node.js, MongoDB, Flutter, and many more.
               </motion.div>
@@ -144,7 +171,7 @@ const Hero = () => {
               <div className="overflow-hidden lg:ml-auto">
                 <motion.h1 
                   variants={textItem}
-                  className="text-[clamp(1.8rem,6.5vw,8rem)] leading-[0.85] md:leading-[0.9] font-['Anton'] uppercase m-0 text-white/95 tracking-wide"
+                  className="text-[clamp(1.5rem,6.5vw,8rem)] leading-[0.85] md:leading-[0.9] font-['Anton'] uppercase m-0 text-white/95 tracking-wide"
                 >
                   FULL STACK DEVELOPER
                 </motion.h1>

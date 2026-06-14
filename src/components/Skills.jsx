@@ -77,6 +77,7 @@ const Skills = () => {
 
   useEffect(() => {
     const handleWheel = (e) => {
+      if (window.innerWidth < 1024) return;
       if (!sectionRef.current) return;
       const rect = sectionRef.current.getBoundingClientRect();
 
@@ -162,7 +163,7 @@ const Skills = () => {
     <section
       id="skills"
       ref={sectionRef}
-      className="relative z-10 h-screen px-6 md:px-12 flex flex-col justify-center"
+      className="relative z-10 min-h-[100dvh] py-24 lg:h-screen lg:py-0 px-6 md:px-12 flex flex-col justify-center"
     >
       <div className="max-w-7xl mx-auto w-full">
 
@@ -229,7 +230,7 @@ const Skills = () => {
           </div>
 
           {/* Right: Animated Skill Cards */}
-          <div className="w-full lg:w-[65%] relative min-h-[320px]">
+          <div className="w-full lg:w-[65%] relative min-h-[360px] md:min-h-[400px] lg:min-h-[320px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeIndex}
@@ -268,7 +269,7 @@ const Skills = () => {
       </div>
 
       {/* Scroll progress dots */}
-      <div className="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-3">
+      <div className="hidden lg:flex absolute right-6 top-1/2 -translate-y-1/2 flex-col gap-3">
         {skillSections.map((_, i) => (
           <div
             key={i}
