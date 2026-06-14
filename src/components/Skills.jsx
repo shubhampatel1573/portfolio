@@ -185,7 +185,7 @@ const Skills = () => {
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-20">
 
           {/* Left: Titles */}
-          <div className="w-full lg:w-[35%] flex flex-col">
+          <div className="w-full lg:w-[35%] flex flex-col justify-center">
             {skillSections.map((section, index) => {
               const isActive = activeIndex === index;
               return (

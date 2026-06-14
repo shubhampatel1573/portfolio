@@ -34,8 +34,12 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="pt-12 pb-32 relative z-10 px-6 md:px-12 bg-[#0a0a0a]">
-      <div className="max-w-[90rem] mx-auto">
+    <section id="contact" className="pt-12 pb-32 relative z-10 px-6 md:px-12 bg-[#0a0a0a] overflow-hidden">
+      
+      {/* Ambient Blue Glow Background */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] md:w-[600px] h-[80vw] md:h-[600px] bg-blue-600/20 md:bg-blue-600/30 rounded-full blur-[100px] md:blur-[150px] pointer-events-none -z-10" />
+
+      <div className="max-w-[90rem] mx-auto relative z-10">
         
         {/* Section Header */}
         <motion.div
@@ -104,67 +108,67 @@ const Contact = () => {
             transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="lg:w-1/2"
           >
-            <div className="w-full rounded-[2.5rem] border border-white/[0.06] bg-gradient-to-b from-white/[0.03] to-transparent p-8 md:p-12 lg:p-14 hover:border-white/[0.12] transition-colors duration-500">
+            <div className="w-full rounded-[2.5rem] border border-white/[0.1] bg-[#0a0a0a]/60 backdrop-blur-2xl p-8 md:p-12 lg:p-14 hover:border-white/[0.15] transition-colors duration-500 shadow-2xl shadow-black/50">
               <form onSubmit={handleSubmit} className="flex flex-col gap-10">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
                   <div className="flex flex-col gap-3">
-                    <label htmlFor="name" className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#666666] font-['Inter']">Name</label>
+                    <label htmlFor="name" className="text-[11px] font-semibold tracking-[0.2em] uppercase text-white font-['Inter']">Name</label>
                     <input 
                       type="text" 
                       id="name" 
                       name="name" 
                       placeholder="Your Name"
                       required
-                      className="bg-transparent border-b border-white/10 px-0 py-2 text-white font-['Inter'] focus:outline-none focus:border-white/50 transition-colors placeholder-white/20 cursor-none"
+                      className="bg-transparent border-b border-white/20 px-0 py-2 text-white font-['Inter'] focus:outline-none focus:border-white transition-colors placeholder-white/40 cursor-none"
                     />
                   </div>
                   <div className="flex flex-col gap-3">
-                    <label htmlFor="email" className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#666666] font-['Inter']">Email</label>
+                    <label htmlFor="email" className="text-[11px] font-semibold tracking-[0.2em] uppercase text-white font-['Inter']">Email</label>
                     <input 
                       type="email" 
                       id="email" 
                       name="email" 
                       placeholder="Your Email"
                       required
-                      className="bg-transparent border-b border-white/10 px-0 py-2 text-white font-['Inter'] focus:outline-none focus:border-white/50 transition-colors placeholder-white/20 cursor-none"
+                      className="bg-transparent border-b border-white/20 px-0 py-2 text-white font-['Inter'] focus:outline-none focus:border-white transition-colors placeholder-white/40 cursor-none"
                     />
                   </div>
                 </div>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
                   <div className="flex flex-col gap-3">
-                    <label htmlFor="mobile" className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#666666] font-['Inter']">Mobile No</label>
+                    <label htmlFor="mobile" className="text-[11px] font-semibold tracking-[0.2em] uppercase text-white font-['Inter']">Mobile No</label>
                     <input 
                       type="tel" 
                       id="mobile" 
                       name="mobile" 
                       placeholder="Your Phone Number"
-                      className="bg-transparent border-b border-white/10 px-0 py-2 text-white font-['Inter'] focus:outline-none focus:border-white/50 transition-colors placeholder-white/20 cursor-none"
+                      className="bg-transparent border-b border-white/20 px-0 py-2 text-white font-['Inter'] focus:outline-none focus:border-white transition-colors placeholder-white/40 cursor-none"
                     />
                   </div>
                   
                   <div className="flex flex-col gap-3">
-                    <label htmlFor="subject" className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#666666] font-['Inter']">Subject</label>
+                    <label htmlFor="subject" className="text-[11px] font-semibold tracking-[0.2em] uppercase text-white font-['Inter']">Subject</label>
                     <input 
                       type="text" 
                       id="subject" 
                       name="subject" 
                       placeholder="Project Inquiry"
                       required
-                      className="bg-transparent border-b border-white/10 px-0 py-2 text-white font-['Inter'] focus:outline-none focus:border-white/50 transition-colors placeholder-white/20 cursor-none"
+                      className="bg-transparent border-b border-white/20 px-0 py-2 text-white font-['Inter'] focus:outline-none focus:border-white transition-colors placeholder-white/40 cursor-none"
                     />
                   </div>
                 </div>
                 
                 <div className="flex flex-col gap-3">
-                  <label htmlFor="message" className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#666666] font-['Inter']">Message</label>
+                  <label htmlFor="message" className="text-[11px] font-semibold tracking-[0.2em] uppercase text-white font-['Inter']">Message</label>
                   <textarea 
                     id="message" 
                     rows="4"
                     name="message" 
                     placeholder="Tell me about your project..."
                     required
-                    className="bg-transparent border-b border-white/10 px-0 py-2 text-white font-['Inter'] focus:outline-none focus:border-white/50 transition-colors placeholder-white/20 resize-none cursor-none"
+                    className="bg-transparent border-b border-white/20 px-0 py-2 text-white font-['Inter'] focus:outline-none focus:border-white transition-colors placeholder-white/40 resize-none cursor-none"
                   ></textarea>
                 </div>
                 
