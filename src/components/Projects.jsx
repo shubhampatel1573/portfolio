@@ -28,31 +28,6 @@ const projects = [
     demo: 'https://praxes.vercel.app/',
     image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=800'
   },
-  // Page 2
-  {
-    title: 'Weather Dashboard',
-    description: 'Real-time weather tracking app with location search, 5-day forecasts, and interactive data visualizations.',
-    tech: ['React.js', 'REST API', 'Chart.js', 'CSS'],
-    github: '#',
-    demo: '#',
-    image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    title: 'Task Manager App',
-    description: 'A productivity app with drag-and-drop boards, real-time collaboration, and deadline reminders built with Flutter.',
-    tech: ['Flutter', 'Dart', 'Firebase', 'REST API'],
-    github: '#',
-    demo: '#',
-    image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    title: 'E-Commerce Platform',
-    description: 'Full-featured online store with cart, payment integration, admin dashboard, and order tracking system.',
-    tech: ['React.js', 'Node.js', 'MongoDB', 'Stripe'],
-    github: '#',
-    demo: '#',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800'
-  }
 ];
 
 const ITEMS_PER_PAGE = 3;
@@ -174,42 +149,44 @@ const Projects = () => {
         </div>
 
         {/* Bottom Navigation Dots & Arrows */}
-        <div className="mt-20 flex items-center justify-between px-4">
-          <div className="flex-1" />
-          
-          {/* Dots */}
-          <div className="flex gap-2">
-            {Array.from({ length: TOTAL_PAGES }).map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrentPage(i)}
-                className={`w-2 h-2 rounded-full transition-all duration-500 cursor-none ${
-                  currentPage === i ? 'bg-white scale-125' : 'bg-white/30 hover:bg-white/50'
-                }`}
-              />
-            ))}
-          </div>
+        {TOTAL_PAGES > 1 && (
+          <div className="mt-20 flex items-center justify-between px-4">
+            <div className="flex-1" />
+            
+            {/* Dots */}
+            <div className="flex gap-2">
+              {Array.from({ length: TOTAL_PAGES }).map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentPage(i)}
+                  className={`w-2 h-2 rounded-full transition-all duration-500 cursor-none ${
+                    currentPage === i ? 'bg-white scale-125' : 'bg-white/30 hover:bg-white/50'
+                  }`}
+                />
+              ))}
+            </div>
 
-          {/* Arrows */}
-          <div className="flex-1 flex justify-end gap-3">
-            <button 
-              onClick={goPrev}
-              className={`w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center transition-colors cursor-none ${
-                currentPage === 0 ? 'text-white/20 cursor-not-allowed' : 'text-white/50 hover:text-white hover:bg-white/10'
-              }`}
-            >
-              <FaChevronLeft size={14} />
-            </button>
-            <button 
-              onClick={goNext}
-              className={`w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center transition-colors cursor-none ${
-                currentPage === TOTAL_PAGES - 1 ? 'text-white/20 cursor-not-allowed' : 'text-white/50 hover:text-white hover:bg-white/10'
-              }`}
-            >
-              <FaChevronRight size={14} />
-            </button>
+            {/* Arrows */}
+            <div className="flex-1 flex justify-end gap-3">
+              <button 
+                onClick={goPrev}
+                className={`w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center transition-colors cursor-none ${
+                  currentPage === 0 ? 'text-white/20 cursor-not-allowed' : 'text-white/50 hover:text-white hover:bg-white/10'
+                }`}
+              >
+                <FaChevronLeft size={14} />
+              </button>
+              <button 
+                onClick={goNext}
+                className={`w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center transition-colors cursor-none ${
+                  currentPage === TOTAL_PAGES - 1 ? 'text-white/20 cursor-not-allowed' : 'text-white/50 hover:text-white hover:bg-white/10'
+                }`}
+              >
+                <FaChevronRight size={14} />
+              </button>
+            </div>
           </div>
-        </div>
+        )}
 
       </div>
     </section>
