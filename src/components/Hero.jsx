@@ -80,12 +80,12 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden fixed inset-0 w-full h-screen bg-[#0a0a0a]/98 backdrop-blur-xl z-[95] flex flex-col items-center justify-center gap-8"
+            className="md:hidden fixed inset-0 w-full h-screen bg-[#0a0a0a]/98 backdrop-blur-xl z-[95] flex flex-col items-center justify-center gap-6"
           >
-            <button onClick={() => handleNavClick('skills')} className="text-4xl md:text-6xl font-['Anton'] uppercase text-white hover:text-[#a855f7] transition-colors cursor-none bg-transparent border-none focus:outline-none tracking-wider">Skills</button>
-            <button onClick={() => handleNavClick('projects')} className="text-4xl md:text-6xl font-['Anton'] uppercase text-white hover:text-[#a855f7] transition-colors cursor-none bg-transparent border-none focus:outline-none tracking-wider">Projects</button>
-            <button onClick={() => handleNavClick('experience')} className="text-4xl md:text-6xl font-['Anton'] uppercase text-white hover:text-[#a855f7] transition-colors cursor-none bg-transparent border-none focus:outline-none tracking-wider">Experience</button>
-            <button onClick={() => handleNavClick('contact')} className="text-4xl md:text-6xl font-['Anton'] uppercase text-white hover:text-[#a855f7] transition-colors cursor-none bg-transparent border-none focus:outline-none tracking-wider">Contact</button>
+            <button onClick={() => handleNavClick('skills')} className="text-3xl md:text-5xl font-['Anton'] uppercase text-white hover:text-[#a855f7] transition-colors cursor-none bg-transparent border-none focus:outline-none tracking-wider">Skills</button>
+            <button onClick={() => handleNavClick('projects')} className="text-3xl md:text-5xl font-['Anton'] uppercase text-white hover:text-[#a855f7] transition-colors cursor-none bg-transparent border-none focus:outline-none tracking-wider">Projects</button>
+            <button onClick={() => handleNavClick('experience')} className="text-3xl md:text-5xl font-['Anton'] uppercase text-white hover:text-[#a855f7] transition-colors cursor-none bg-transparent border-none focus:outline-none tracking-wider">Experience</button>
+            <button onClick={() => handleNavClick('contact')} className="text-3xl md:text-5xl font-['Anton'] uppercase text-white hover:text-[#a855f7] transition-colors cursor-none bg-transparent border-none focus:outline-none tracking-wider">Contact</button>
           </motion.div>
         )}
       </AnimatePresence>
@@ -132,7 +132,7 @@ const Hero = () => {
             variants={textContainer}
             initial="hidden"
             animate="visible"
-            className="w-fit lg:w-full max-w-[90rem] mx-auto flex flex-col justify-center h-full relative z-10 px-0 md:px-4 gap-4 md:gap-6 lg:gap-12 mt-8 md:mt-0"
+            className="w-fit lg:w-full max-w-[90rem] mx-auto flex flex-col justify-center h-full relative z-10 px-0 md:px-4 gap-4 md:gap-6 lg:gap-12 -mt-16 md:mt-0"
           >
             {/* Row 1 */}
             <div className="w-full flex flex-col lg:flex-row justify-between items-start lg:items-end mb-4 lg:mb-2">
@@ -184,7 +184,7 @@ const Hero = () => {
             variants={fadeItem} 
             initial="hidden" 
             animate="visible" 
-            className="absolute bottom-16 md:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 md:gap-6"
+            className="absolute bottom-28 md:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 md:gap-6"
           >
             <button onClick={() => handleNavClick('projects')} className="text-[10px] tracking-[0.3em] uppercase font-sans font-semibold cursor-none hover:text-neon-cyan transition-colors bg-transparent border-none text-white focus:outline-none">
               Scroll down

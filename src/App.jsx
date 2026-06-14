@@ -21,7 +21,7 @@ function App() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 py-8 text-center text-[#666666] font-['Inter'] text-xs uppercase tracking-widest">
+      <footer className="border-t border-white/10 py-8 text-center text-[#666666] font-['Inter'] text-[10px] md:text-xs uppercase tracking-widest">
         <p>© {new Date().getFullYear()} Shubham Patel. All rights reserved.</p>
       </footer>
     </div>

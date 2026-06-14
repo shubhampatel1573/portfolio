@@ -65,12 +65,12 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden fixed inset-0 w-full h-screen bg-[#0a0a0a]/98 backdrop-blur-xl z-[85] flex flex-col items-center justify-center gap-8"
+            className="md:hidden fixed inset-0 w-full h-screen bg-[#0a0a0a]/98 backdrop-blur-xl z-[85] flex flex-col items-center justify-center gap-6"
           >
-            <button onClick={() => handleNavClick('skills')} className="text-4xl md:text-6xl font-['Anton'] uppercase text-white hover:text-[#a855f7] transition-colors cursor-none bg-transparent border-none focus:outline-none tracking-wider">Skills</button>
-            <button onClick={() => handleNavClick('projects')} className="text-4xl md:text-6xl font-['Anton'] uppercase text-white hover:text-[#a855f7] transition-colors cursor-none bg-transparent border-none focus:outline-none tracking-wider">Projects</button>
-            <button onClick={() => handleNavClick('experience')} className="text-4xl md:text-6xl font-['Anton'] uppercase text-white hover:text-[#a855f7] transition-colors cursor-none bg-transparent border-none focus:outline-none tracking-wider">Experience</button>
-            <button onClick={() => handleNavClick('contact')} className="text-4xl md:text-6xl font-['Anton'] uppercase text-white hover:text-[#a855f7] transition-colors cursor-none bg-transparent border-none focus:outline-none tracking-wider">Contact</button>
+            <button onClick={() => handleNavClick('skills')} className="text-3xl md:text-5xl font-['Anton'] uppercase text-white hover:text-[#a855f7] transition-colors cursor-none bg-transparent border-none focus:outline-none tracking-wider">Skills</button>
+            <button onClick={() => handleNavClick('projects')} className="text-3xl md:text-5xl font-['Anton'] uppercase text-white hover:text-[#a855f7] transition-colors cursor-none bg-transparent border-none focus:outline-none tracking-wider">Projects</button>
+            <button onClick={() => handleNavClick('experience')} className="text-3xl md:text-5xl font-['Anton'] uppercase text-white hover:text-[#a855f7] transition-colors cursor-none bg-transparent border-none focus:outline-none tracking-wider">Experience</button>
+            <button onClick={() => handleNavClick('contact')} className="text-3xl md:text-5xl font-['Anton'] uppercase text-white hover:text-[#a855f7] transition-colors cursor-none bg-transparent border-none focus:outline-none tracking-wider">Contact</button>
           </motion.div>
         )}
       </AnimatePresence>
