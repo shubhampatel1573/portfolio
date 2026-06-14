@@ -80,7 +80,7 @@ const Navbar = () => {
         initial={{ y: '-100%' }}
         animate={{ y: visible && pastHero ? '0%' : '-100%' }}
         transition={{ duration: 0.4, ease: [0.76, 0, 0.24, 1] }}
-        className="fixed top-0 left-0 w-full z-[90] px-6 md:px-12 py-5 flex justify-between items-center backdrop-blur-xl bg-[#0a0a0a]/80 border-b border-white/[0.06]"
+        className="fixed top-0 left-0 w-full z-[90] px-6 md:px-12 py-3 md:py-4 flex justify-between items-center backdrop-blur-xl bg-[#0a0a0a]/80 border-b border-white/[0.06]"
       >
         <button 
           onClick={() => {

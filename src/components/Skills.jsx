@@ -238,7 +238,7 @@ const Skills = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -60 }}
                 transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
-                className="grid grid-cols-2 md:grid-cols-3 gap-4"
+                className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4"
               >
                 {skillSections[activeIndex].items.map((item, i) => (
                   <motion.div
@@ -246,17 +246,17 @@ const Skills = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.35, delay: i * 0.06 }}
-                    className="group relative p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:bg-white/[0.07] hover:border-white/15 transition-all duration-300"
+                    className="group relative p-3 sm:p-4 md:p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:bg-white/[0.07] hover:border-white/15 transition-all duration-300 overflow-hidden"
                   >
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="p-2 rounded-lg bg-white/5">
+                    <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                      <div className="p-1.5 md:p-2 rounded-lg bg-white/5 shrink-0 [&>svg]:w-5 [&>svg]:h-5 md:[&>svg]:w-8 md:[&>svg]:h-8">
                         {item.icon}
                       </div>
-                      <span className="text-sm font-['Inter'] font-semibold text-white">
+                      <span className="text-[11px] sm:text-xs md:text-sm font-['Inter'] font-semibold text-white truncate">
                         {item.name}
                       </span>
                     </div>
-                    <p className="text-xs font-['Inter'] text-gray-500 leading-relaxed group-hover:text-gray-400 transition-colors">
+                    <p className="text-[10px] sm:text-xs font-['Inter'] text-gray-500 leading-relaxed group-hover:text-gray-400 transition-colors">
                       {item.detail}
                     </p>
                   </motion.div>

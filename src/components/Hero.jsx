@@ -132,14 +132,14 @@ const Hero = () => {
             variants={textContainer}
             initial="hidden"
             animate="visible"
-            className="w-full max-w-[90rem] mx-auto flex flex-col justify-center h-full relative z-10 px-0 md:px-4 gap-4 md:gap-6 lg:gap-12 mt-8 md:mt-0"
+            className="w-fit lg:w-full max-w-[90rem] mx-auto flex flex-col justify-center h-full relative z-10 px-0 md:px-4 gap-4 md:gap-6 lg:gap-12 mt-8 md:mt-0"
           >
             {/* Row 1 */}
             <div className="w-full flex flex-col lg:flex-row justify-between items-start lg:items-end mb-4 lg:mb-2">
               <div className="overflow-hidden">
                 <motion.h1 
                   variants={textItem}
-                  className="text-[clamp(1.8rem,7.5vw,9rem)] leading-[0.85] md:leading-[0.9] font-['Anton'] uppercase m-0 tracking-wide text-white"
+                  className="text-[clamp(1.8rem,7.5vw,9rem)] leading-[0.85] md:leading-[0.9] font-['Anton'] uppercase m-0 tracking-wide text-white text-left"
                 >
                   HI ! I'M SHUBHAM
                 </motion.h1>
@@ -153,7 +153,7 @@ const Hero = () => {
               </motion.div>
               <motion.p
                 variants={fadeItem}
-                className="block lg:hidden text-xs text-gray-400 font-sans leading-relaxed tracking-wide mt-2"
+                className="block lg:hidden text-xs text-gray-400 font-sans leading-relaxed tracking-wide mt-2 text-left"
               >
                 Transforming Ideas into Scalable Web & Mobile Products.
               </motion.p>
@@ -171,7 +171,7 @@ const Hero = () => {
               <div className="overflow-hidden lg:ml-auto">
                 <motion.h1 
                   variants={textItem}
-                  className="text-[clamp(1.5rem,6.5vw,8rem)] leading-[0.85] md:leading-[0.9] font-['Anton'] uppercase m-0 text-white/95 tracking-wide"
+                  className="text-[clamp(1.5rem,6.5vw,8rem)] leading-[0.85] md:leading-[0.9] font-['Anton'] uppercase m-0 text-white/95 tracking-wide text-left lg:text-right"
                 >
                   FULL STACK DEVELOPER
                 </motion.h1>
